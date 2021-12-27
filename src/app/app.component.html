@@ -75,6 +75,15 @@
     align-items: center;
   }
 
+  .content .menu {
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
   svg.material-icons {
     height: 24px;
     width: auto;
@@ -304,7 +313,10 @@
 
 <div class="content" role="main">
   <!-- Next Steps -->
-  <h2>Next Steps</h2>
+  <div class="menu">
+    <span>Home</span>
+    <span>Cart</span>
+  </div>
   <p>What do you want to do next with your app?</p>
 
   <input type="hidden" #selection>
