@@ -88,6 +88,12 @@
     fill: #888;
   }
 
+  .products-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 3em;
+  }
+
   .card-container {
     display: flex;
     flex-wrap: wrap;
@@ -304,11 +310,11 @@
 
 <div class="content" role="main">
   <!-- Next Steps -->
-  <p>What do you want to do next with your app?</p>
-
   <input type="hidden" #selection>
 
-  <app-product-item *ngFor="let product of products" [product]="product"></app-product-item>
+  <div class="products-container">
+    <app-product-item *ngFor="let product of products" [product]="product"></app-product-item>
+  </div>
 
   <div class="card-container">
     <button class="card card-small" (click)="selection.value = 'component'" tabindex="0">
