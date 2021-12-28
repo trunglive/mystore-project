@@ -10,8 +10,6 @@ export class ProductService {
   constructor(private http: HttpClient) {}
 
   getProducts() {
-    return this.http.get<Product[]>(
-      'https://jsonplaceholder.typicode.com/products?_limit=10'
-    );
+    return this.http.get<Product[]>('././assets/data.json');
   }
 }
