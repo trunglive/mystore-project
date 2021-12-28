@@ -1,7 +1,6 @@
-<div style="margin-bottom: 40px">
-  <h4>product item here</h4>
-  <h3>{{ product.id }}</h3>
-  <p>{{ product.name }}</p>
-  <p>Votes: {{ product.price }}</p>
-  <br>
+<div class="product-item-container">
+  <img src="{{ product.url }}" style="width: 200px" />
+  <div class="product-item-name">{{ product.name }}</div>
+  <div class="product-item-price">{{ product.price }}</div>
+  <br />
 </div>
