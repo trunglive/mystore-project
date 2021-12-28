@@ -1,0 +1,16 @@
+.product-item-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.product-item-name {
+  padding-top: 14px;
+  font-weight: 500;
+  color: #898989;
+}
+
+.product-item-price {
+  font-weight: 700;
+}
