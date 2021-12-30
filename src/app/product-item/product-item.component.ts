@@ -12,9 +12,11 @@ export class ProductItemComponent implements OnInit {
   constructor() {
     this.product = {
       id: 0,
-      name: 'daniel',
-      price: 1,
+      name: '',
+      price: 0,
       url: '',
+      description: '',
+      quantity: 0,
     };
   }
 
