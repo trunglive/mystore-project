@@ -1,10 +1,10 @@
 <div class="product-item-detail-container">
-  <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" style="width: 300px" />
+  <img src="{{ productItem.url }}" style="width: 300px" />
   <div class="product-item-detail">
-    <div class="product-item-detail-name">Book</div>
-    <div class="product-item-detail-description">You can read it!</div>
-    <div class="product-item-detail-quantity">Quantity: 3</div>
-    <div class="product-item-detail-price">Price: 9.99</div>
+    <div class="product-item-detail-name">{{ productItem.name }}</div>
+    <div class="product-item-detail-description">{{ productItem.description }}</div>
+    <div class="product-item-detail-quantity">Quantity: {{ productItem.quantity }}</div>
+    <div class="product-item-detail-price">Price: {{ productItem.price }}</div>
     <button class="product-item-detail-add-to-cart" tabindex="0">
       <span>Add to Cart</span>
     </button>
