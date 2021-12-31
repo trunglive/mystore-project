@@ -4,10 +4,12 @@
     <div class="product-item-detail-name">{{ productItem.name }}</div>
     <div class="product-item-detail-description">{{ productItem.description }}</div>
     <div class="product-item-detail-quantity">Quantity: {{ productItem.quantity }}</div>
-    <div class="product-item-detail-price">Price: {{ productItem.price }}</div>
-    <button class="product-item-detail-add-to-cart" tabindex="0">
-      <span>Add to Cart</span>
-    </button>
+    <div class="product-item-detail-price-and-add-to-cart">
+      <div class="product-item-detail-price"><sup style="font-size: 12px;">$</sup>{{ productItem.price }}</div>
+      <button class="product-item-detail-add-to-cart" tabindex="0">
+        <span>Add to Cart</span>
+      </button>
+    </div>
   </div>
   <br />
 </div>
