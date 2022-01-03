@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Product } from '../models/Product';
 import { ProductService } from '../services/product.service';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-product-item-detail',
@@ -18,10 +19,13 @@ export class ProductItemDetailComponent implements OnInit {
     quantity: 0,
   };
   productId: number = 0;
+  quantity: number = 1;
+  inventory: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   constructor(
     private productService: ProductService,
-    private activeRouter: ActivatedRoute
+    private activeRouter: ActivatedRoute,
+    private cartService: CartService
   ) {
     this.activeRouter.paramMap.subscribe((params: ParamMap) => {
       this.productId = Number(params.get('productId'));
@@ -34,5 +38,17 @@ export class ProductItemDetailComponent implements OnInit {
         (product) => product.id === this.productId
       ) as unknown) as Product;
     });
+  }
+
+  addToCart(): void {
+    this.productItem.quantity = Number(this.quantity);
+    this.cartService.addToCart(this.productItem);
+    alert(
+      `${this.productItem.quantity} x ${this.productItem.name} added to your cart.`
+    );
+  }
+
+  quantityChange(e: any) {
+    this.quantity = e.target.value;
   }
 }
