@@ -62,7 +62,7 @@
 }
 
 .order-details {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .order-details-1 {
@@ -97,7 +97,7 @@
 
 .order-details-1-description {
   color: #898989;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
 }
 
@@ -128,8 +128,8 @@
   align-items: center;
   height: 50px;
   margin: 10px;
-  padding: 20px;
-  font-size: 24px;
+  padding: 10px 20px;
+  font-size: 20px;
   background-color: #f5f5f5;
 }
 
