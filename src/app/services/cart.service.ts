@@ -27,5 +27,13 @@ export class CartService {
       this.cartList.push(product);
     }
     console.log(this.cartList);
+    console.log(this.calculateCartTotal());
+  }
+
+  calculateCartTotal() {
+    return this.cartList.reduce(
+      (prev, next) => prev + next.price * next.quantity,
+      0
+    );
   }
 }
