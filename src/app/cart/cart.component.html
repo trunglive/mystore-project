@@ -1,26 +1,67 @@
 <div class="cart-container">
   <form #form="ngForm" (ngSubmit)="onSubmit()" class="personal-info">
     <div class="personal-info-input">
-      <input type="text" name="firstName" [(ngModel)]="firstName" placeholder="First name" class="first-name input-container" required>
-      <input type="text" name="lastName" [(ngModel)]="lastName" placeholder="Last name" class="last-name input-container" required>
-      <input type="email" name="email" [(ngModel)]="email" placeholder="E-mail" class="email input-container" required>
-      <input type="tel" name="phoneNumber" [(ngModel)]="phoneNumber" placeholder="Phone number" class="phone-number input-container" required>
-      <input type="text" name="shippingAddress" [(ngModel)]="shippingAddress" placeholder="Shipping address" class="shipping-address input-container" required>
+      <input
+        type="text"
+        name="firstName"
+        [(ngModel)]="firstName"
+        placeholder="First name"
+        class="first-name input-container"
+        required
+      />
+      <input
+        type="text"
+        name="lastName"
+        [(ngModel)]="lastName"
+        placeholder="Last name"
+        class="last-name input-container"
+        required
+      />
+      <input
+        type="email"
+        name="email"
+        [(ngModel)]="email"
+        placeholder="E-mail"
+        class="email input-container"
+        required
+      />
+      <input
+        type="tel"
+        name="phoneNumber"
+        [(ngModel)]="phoneNumber"
+        placeholder="Phone number"
+        class="phone-number input-container"
+        required
+      />
+      <input
+        type="text"
+        name="shippingAddress"
+        [(ngModel)]="shippingAddress"
+        placeholder="Shipping address"
+        class="shipping-address input-container"
+        required
+      />
     </div>
-    <button type="submit" [disabled]="form.invalid" class="purchase-button" [ngClass]="{'purchase-button-disabled': form.invalid}" tabindex="0">
+    <button
+      type="submit"
+      [disabled]="form.invalid"
+      class="purchase-button"
+      [ngClass]="{ 'purchase-button-disabled': form.invalid }"
+      tabindex="0"
+    >
       <span>Purchase ${{ cartTotal }}</span>
     </button>
   </form>
   <div class="order-info">
     <div class="your-order">
       <div class="your-order-text">Your Order</div>
-      <div class="order-details">
-        <div class="order-details-1" *ngFor="let cart of cartList">
-          <img class="order-details-1-thumbnail" src="{{ cart.url }}" />
-          <div class="order-details-overall">
-            <div class="order-details-1-name">{{ cart.name }}</div>
-            <div class="order-details-1-description">{{ cart.description }}</div>
-            <div class="order-details-1-price">${{ cart.price }} <span>x {{ cart.quantity }}</span></div>
+      <div class="order-details" *ngFor="let cart of cartList">
+        <img class="order-details-thumbnail" src="{{ cart.url }}" />
+        <div class="order-details-overall">
+          <div class="order-details-name">{{ cart.name }}</div>
+          <div class="order-details-description">{{ cart.description }}</div>
+          <div class="order-details-price">
+            ${{ cart.price }} <span>x {{ cart.quantity }}</span>
           </div>
         </div>
       </div>
@@ -37,7 +78,7 @@
     </div>
     <div class="total-container">
       <div class="total-text">Total</div>
-      <div class="total-price">${{cartTotal}}</div>
+      <div class="total-price">${{ cartTotal }}</div>
     </div>
   </div>
 </div>
