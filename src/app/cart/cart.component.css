@@ -6,7 +6,6 @@
 }
 
 .personal-info {
-  /*border: 1px solid crimson;*/
   height: 300px;
 }
 
@@ -43,7 +42,6 @@
   border: none;
   outline: none;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  /*box-shadow: 0 0 0.8rem rgb(8 8 8 / 10%);*/
 }
 
 .order-info {
@@ -51,7 +49,6 @@
 }
 
 .your-order {
-  /*border: 1px solid cadetblue;*/
   margin: 30px;
   font-size: 18px;
 }
@@ -62,6 +59,7 @@
 }
 
 .order-details {
+  position: relative;
   display: flex;
   align-items: center;
   padding-top: 20px;
@@ -94,19 +92,19 @@
   font-weight: 400;
 }
 
-/*.order-details-1-name {*/
-/*  font-weight: 700;*/
-/*}*/
-
 .order-details-description {
   color: #898989;
   font-size: 14px;
   font-weight: 400;
 }
 
-/*.order-details-1-price {*/
-/*  font-weight: 700;*/
-/*}*/
+.order-details-X {
+  position: absolute;
+  top: 30px;
+  right: 80px;
+  font-weight: 700;
+  cursor: pointer;
+}
 
 .order-shipping-discount {
   margin-top: 30px;
