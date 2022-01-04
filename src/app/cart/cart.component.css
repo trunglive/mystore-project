@@ -6,8 +6,44 @@
 }
 
 .personal-info {
-  border: 1px solid crimson;
+  /*border: 1px solid crimson;*/
   height: 300px;
+}
+
+.personal-info-input {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(3rem, 1fr));
+  grid-gap: 1rem;
+}
+
+.personal-info-input .first-name {
+  grid-column: 1 / 2;
+}
+
+.personal-info-input .last-name {
+  grid-column: 2 / 3;
+}
+
+.personal-info-input .email {
+  grid-column: 1 / 2;
+}
+
+.personal-info-input .phone-number {
+  grid-column: 2 / 3;
+}
+
+.personal-info-input .shipping-address {
+  grid-column: 1 / 3;
+}
+
+.input-container {
+  height: 3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border: none;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  /*box-shadow: 0 0 0.8rem rgb(8 8 8 / 10%);*/
 }
 
 .order-info {
