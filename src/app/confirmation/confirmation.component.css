@@ -1,0 +1,11 @@
+.order-confirmation-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 160px;
+}
+
+.order-confirmation-thank-you {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
