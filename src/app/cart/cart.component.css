@@ -162,3 +162,9 @@
   transition: all 0.2s ease-in-out;
   cursor: pointer;
 }
+
+.purchase-button-disabled {
+  color: #aaa;
+  background-color: #eee;
+  cursor: not-allowed;
+}
