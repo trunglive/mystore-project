@@ -91,6 +91,12 @@
   font-weight: 700;
 }
 
+.order-details-1-price span {
+  color: #898989;
+  font-size: 14px;
+  font-weight: 400;
+}
+
 /*.order-details-1-name {*/
 /*  font-weight: 700;*/
 /*}*/

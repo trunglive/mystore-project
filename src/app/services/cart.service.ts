@@ -31,9 +31,16 @@ export class CartService {
   }
 
   calculateCartTotal() {
-    return this.cartList.reduce(
+    const result = this.cartList.reduce(
       (prev, next) => prev + next.price * next.quantity,
       0
     );
+
+    // add additional shipping cost: $20
+    const shippingCost = 20;
+
+    // and round to 2 decimal places
+    const roundedResult = Math.round((result + shippingCost) * 100) / 100;
+    return roundedResult;
   }
 }
