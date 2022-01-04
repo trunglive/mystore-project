@@ -15,20 +15,12 @@
     <div class="your-order">
       <div class="your-order-text">Your Order</div>
       <div class="order-details">
-        <div class="order-details-1">
-          <img class="order-details-1-thumbnail" src="https://images.unsplash.com/photo-1583394838336-acd977736f90?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" />
+        <div class="order-details-1" *ngFor="let cart of cartList">
+          <img class="order-details-1-thumbnail" src="{{ cart.url }}" />
           <div class="order-details-overall">
-            <div class="order-details-1-name">Headphones</div>
-            <div class="order-details-1-description">Listen to stuff</div>
-            <div class="order-details-1-price">$249.99</div>
-          </div>
-        </div>
-        <div class="order-details-1">
-          <img class="order-details-1-thumbnail" src="https://images.unsplash.com/photo-1583394838336-acd977736f90?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" />
-          <div class="order-details-overall">
-            <div class="order-details-1-name">Headphones</div>
-            <div class="order-details-1-description">Listen to stuff</div>
-            <div class="order-details-1-price">$249.99</div>
+            <div class="order-details-1-name">{{ cart.name }}</div>
+            <div class="order-details-1-description">{{ cart.description }}</div>
+            <div class="order-details-1-price">${{ cart.price }} x {{ cart.quantity }}</div>
           </div>
         </div>
       </div>
