@@ -8,7 +8,7 @@
       <input type="text" placeholder="Shipping address" class="shipping-address input-container" required="">
     </div>
     <button class="purchase-button" tabindex="0">
-      <span>Purchase</span>
+      <span>Purchase ${{ cartTotal }}</span>
     </button>
   </div>
   <div class="order-info">
@@ -45,7 +45,7 @@
     </div>
     <div class="total-container">
       <div class="total-text">Total</div>
-      <div class="total-price">$145</div>
+      <div class="total-price">${{cartTotal}}</div>
     </div>
   </div>
 </div>
