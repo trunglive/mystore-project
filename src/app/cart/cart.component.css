@@ -136,3 +136,23 @@
 .total-price {
   font-weight: 700;
 }
+
+/*refactor duplicate button style*/
+.purchase-button {
+  all: unset;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 128px;
+  height: 16px;
+  margin-top: 20px;
+  padding: 16px;
+  color: #fff;
+  line-height: 24px;
+  border-radius: 4px;
+  border: 1px solid #eee;
+  background-color: #242424;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
