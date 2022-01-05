@@ -38,7 +38,7 @@ export class CartService {
     );
 
     // add additional shipping cost: $20
-    const shippingCost = 20;
+    const shippingCost = this.getCart().length > 0 ? 20 : 0;
 
     // and round to 2 decimal places
     const roundedResult = Math.round((result + shippingCost) * 100) / 100;
