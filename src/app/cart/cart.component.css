@@ -68,6 +68,21 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.order-details-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 14px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.order-details-empty > div {
+  margin-top: 20px;
+  color: #898989;
+}
+
 .order-details-thumbnail {
   width: 80px;
 }
@@ -132,6 +147,14 @@
   padding: 10px 20px;
   font-size: 18px;
   background-color: #f5f5f5;
+}
+
+.empty-total-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  font-size: 18px;
 }
 
 .total-price {

@@ -55,18 +55,26 @@
   <div class="order-info">
     <div class="your-order">
       <div class="your-order-text">Your Order</div>
-      <div class="order-details" *ngFor="let cart of cartList">
-        <img class="order-details-thumbnail" src="{{ cart.url }}" />
-        <div class="order-details-overall">
-          <div class="order-details-name">{{ cart.name }}</div>
-          <div class="order-details-description">{{ cart.description }}</div>
-          <div class="order-details-price">
-            ${{ cart.price }} <span>x {{ cart.quantity }}</span>
+      <div *ngIf="cartList.length > 0">
+        <div class="order-details" *ngFor="let cart of cartList">
+          <img class="order-details-thumbnail" src="{{ cart.url }}" />
+          <div class="order-details-overall">
+            <div class="order-details-name">{{ cart.name }}</div>
+            <div class="order-details-description">{{ cart.description }}</div>
+            <div class="order-details-price">
+              ${{ cart.price }} <span>x {{ cart.quantity }}</span>
+            </div>
+          </div>
+          <div (click)="removeFromCart(cart)" class="order-details-X">
+            <img src="assets/trash-icon.png" style="width: 20px" />
           </div>
         </div>
-        <div (click)="removeFromCart(cart)" class="order-details-X"><img src="assets/trash-icon.png" style="width: 20px;" /></div>
       </div>
-      <div class="order-shipping-discount">
+      <div *ngIf="cartList.length === 0" class="order-details-empty">
+        <img src="assets/empty-cart-icon.png" style="width: 60px" />
+        <div>The cart is empty.</div>
+      </div>
+      <div *ngIf="cartList.length > 0" class="order-shipping-discount">
         <div class="order-shipping">
           <div class="order-shipping-text">Shipping</div>
           <div class="order-shipping-amount">$20</div>
@@ -77,9 +85,10 @@
         </div>
       </div>
     </div>
-    <div class="total-container">
+    <div *ngIf="cartList.length > 0" class="total-container">
       <div class="total-text">Total</div>
       <div class="total-price">${{ cartTotal }}</div>
     </div>
+    <div *ngIf="cartList.length === 0" class="empty-total-container">Let's add items to cart.</div>
   </div>
 </div>
