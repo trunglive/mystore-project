@@ -7,6 +7,8 @@
         [(ngModel)]="firstName"
         placeholder="First name"
         class="first-name input-container"
+        [disabled]="cartList.length === 0"
+        [ngClass]="{ 'input-disabled': cartList.length === 0 }"
         required
       />
       <input
@@ -15,6 +17,8 @@
         [(ngModel)]="lastName"
         placeholder="Last name"
         class="last-name input-container"
+        [disabled]="cartList.length === 0"
+        [ngClass]="{ 'input-disabled': cartList.length === 0 }"
         required
       />
       <input
@@ -23,6 +27,8 @@
         [(ngModel)]="email"
         placeholder="E-mail"
         class="email input-container"
+        [disabled]="cartList.length === 0"
+        [ngClass]="{ 'input-disabled': cartList.length === 0 }"
         required
       />
       <input
@@ -31,6 +37,8 @@
         [(ngModel)]="phoneNumber"
         placeholder="Phone number"
         class="phone-number input-container"
+        [disabled]="cartList.length === 0"
+        [ngClass]="{ 'input-disabled': cartList.length === 0 }"
         required
       />
       <input
@@ -39,14 +47,16 @@
         [(ngModel)]="shippingAddress"
         placeholder="Shipping address"
         class="shipping-address input-container"
+        [disabled]="cartList.length === 0"
+        [ngClass]="{ 'input-disabled': cartList.length === 0 }"
         required
       />
     </div>
     <button
       type="submit"
-      [disabled]="form.invalid"
+      [disabled]="cartList.length === 0 || form.invalid"
       class="purchase-button"
-      [ngClass]="{ 'purchase-button-disabled': form.invalid }"
+      [ngClass]="{ 'purchase-button-disabled': cartList.length === 0 || form.invalid }"
       tabindex="0"
     >
       <span>Purchase ${{ cartTotal }}</span>

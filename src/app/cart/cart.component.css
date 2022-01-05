@@ -15,6 +15,10 @@
   grid-gap: 1rem;
 }
 
+.input-disabled {
+  cursor: not-allowed;
+}
+
 .personal-info-input .first-name {
   grid-column: 1 / 2;
 }
