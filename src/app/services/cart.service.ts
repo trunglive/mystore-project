@@ -15,7 +15,6 @@ export class CartService {
 
   addToCart(product: Product) {
     let foundCart = this.cartList.find((cart) => cart.id === product.id);
-    console.log({ foundCart });
     if (foundCart) {
       let currentQuantity: number = foundCart.quantity;
       let newQuantity: number = currentQuantity + product.quantity;
@@ -26,8 +25,10 @@ export class CartService {
     } else {
       this.cartList.push(product);
     }
-    console.log(this.cartList);
-    console.log(this.calculateCartTotal());
+  }
+
+  removeFromCart(productItem: Product) {
+    this.cartList = this.cartList.filter((cart) => cart.id !== productItem.id);
   }
 
   calculateCartTotal() {
