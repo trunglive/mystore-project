@@ -5,7 +5,6 @@ export class Product {
   url: string;
   description: string;
   quantity: number;
-  favorite: boolean;
 
   constructor() {
     this.id = 1;
@@ -14,6 +13,5 @@ export class Product {
     this.url = '';
     this.description = '';
     this.quantity = 0;
-    this.favorite = false;
   }
 }
