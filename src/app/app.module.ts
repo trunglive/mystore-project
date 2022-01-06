@@ -12,6 +12,9 @@ import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductItemComponent } from './product-item/product-item.component';
 import { ProductItemDetailComponent } from './product-item-detail/product-item-detail.component';
+import { FavoriteButtonComponent } from './favorite-button/favorite-button.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,7 @@ import { ProductItemDetailComponent } from './product-item-detail/product-item-d
     ProductListComponent,
     ProductItemComponent,
     ProductItemDetailComponent,
+    FavoriteButtonComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,6 +33,8 @@ import { ProductItemDetailComponent } from './product-item-detail/product-item-d
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    MatButtonModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
