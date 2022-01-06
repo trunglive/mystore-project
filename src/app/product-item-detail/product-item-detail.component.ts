@@ -18,7 +18,6 @@ export class ProductItemDetailComponent implements OnInit {
     url: '',
     description: '',
     quantity: 0,
-    favorite: false,
   };
   productId: number = 0;
   quantity: number = 1;
