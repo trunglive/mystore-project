@@ -36,5 +36,8 @@ export class CartComponent implements OnInit {
     this.cartService.removeFromCart(productItem);
     this.cartList = this.cartService.getCart();
     this.getCartTotal();
+    alert(
+      `${productItem.quantity} x ${productItem.name} removed from your cart.`
+    );
   }
 }
