@@ -1,29 +1,59 @@
 <div class="cart-container">
   <form #form="ngForm" (ngSubmit)="onSubmit()" class="personal-info">
+    <div *ngIf="form.invalid && (form.dirty || form.touched)" class="validation-message">
+      <div class="validation-message-heading">Please correct the errors below:</div>
+      <div *ngIf="cart_first_name.invalid && (cart_first_name.dirty || cart_first_name.touched)">
+        <div *ngIf="cart_first_name.errors?.['required']">First name is required.</div>
+        <div *ngIf="cart_first_name.errors?.['minlength']">
+          First name must be at least 2 characters long.
+        </div>
+      </div>
+      <div *ngIf="cart_last_name.invalid && (cart_last_name.dirty || cart_last_name.touched)">
+        <div *ngIf="cart_last_name.errors?.['required']">Last name is required.</div>
+        <div *ngIf="cart_last_name.errors?.['minlength']">
+          Last name must be at least 2 characters long.
+        </div>
+      </div>
+      <div *ngIf="cart_email.invalid && (cart_email.dirty || cart_email.touched)">
+        <div *ngIf="cart_email.errors?.['required']">Email is required.</div>
+        <div *ngIf="cart_email.invalid && !cart_email.errors?.['required']">
+          Email must be a valid email address.
+        </div>
+      </div>
+      <div *ngIf="cart_phone_number.invalid && (cart_phone_number.dirty || cart_phone_number.touched)">
+        <div *ngIf="cart_phone_number.errors?.['required']">Phone number is required.</div>
+      </div>
+      <div *ngIf="cart_shipping_address.invalid && (cart_shipping_address.dirty || cart_shipping_address.touched)">
+        <div *ngIf="cart_shipping_address.errors?.['required']">Shipping address is required.</div>
+      </div>
+    </div>
+
     <div class="personal-info-input">
       <input
         type="text"
         name="firstName"
         [ngModel]="firstName"
         (ngModelChange)="firstName = $event"
-        minlength="5"
+        minlength="2"
         placeholder="First name"
         class="first-name input-container"
         [disabled]="cartList.length === 0"
         [ngClass]="{ 'input-disabled': cartList.length === 0 }"
         required
+        #cart_first_name="ngModel"
       />
       <input
         type="text"
         name="lastName"
         [ngModel]="lastName"
         (ngModelChange)="lastName = $event"
-        minlength="5"
+        minlength="2"
         placeholder="Last name"
         class="last-name input-container"
         [disabled]="cartList.length === 0"
         [ngClass]="{ 'input-disabled': cartList.length === 0 }"
         required
+        #cart_last_name="ngModel"
       />
       <input
         type="email"
@@ -36,6 +66,7 @@
         [disabled]="cartList.length === 0"
         [ngClass]="{ 'input-disabled': cartList.length === 0 }"
         required
+        #cart_email="ngModel"
       />
       <input
         type="number"
@@ -48,6 +79,7 @@
         [disabled]="cartList.length === 0"
         [ngClass]="{ 'input-disabled': cartList.length === 0 }"
         required
+        #cart_phone_number="ngModel"
       />
       <input
         type="text"
@@ -59,13 +91,16 @@
         [disabled]="cartList.length === 0"
         [ngClass]="{ 'input-disabled': cartList.length === 0 }"
         required
+        #cart_shipping_address="ngModel"
       />
     </div>
     <button
       type="submit"
       [disabled]="cartList.length === 0 || form.invalid"
       class="purchase-button"
-      [ngClass]="{ 'purchase-button-disabled': cartList.length === 0 || form.invalid }"
+      [ngClass]="{
+        'purchase-button-disabled': cartList.length === 0 || form.invalid
+      }"
       tabindex="0"
     >
       <span>Purchase ${{ cartTotal }}</span>
@@ -108,6 +143,8 @@
       <div class="total-text">Total</div>
       <div class="total-price">${{ cartTotal }}</div>
     </div>
-    <div *ngIf="cartList.length === 0" class="empty-total-container">Let's add items to cart.</div>
+    <div *ngIf="cartList.length === 0" class="empty-total-container">
+      Let's add items to cart.
+    </div>
   </div>
 </div>
