@@ -1,8 +1,9 @@
 <div class="product-item-detail-container">
-  <img src="{{ productItem.url }}" style="width: 300px" />
+  <img src="{{ productItem.url }}" style="width: 300px"/>
   <div class="product-item-detail">
     <div class="product-item-favorite">
-      <app-favorite-button [selected]="favorite" (toggleFavorite)="toggleFavorite(productItem.name, productItem.id, $event)"></app-favorite-button>
+      <app-favorite-button [selected]="favorite"
+                           (toggleFavorite)="toggleFavorite(productItem.name, productItem.id, $event)"></app-favorite-button>
     </div>
     <div class="product-item-detail-name">{{ productItem.name }}</div>
     <div class="product-item-detail-description">{{ productItem.description }}</div>
@@ -12,7 +13,7 @@
         <div class="product-item-X">X</div>
         <div class="select-dropdown">
           <select (change)="quantityChange($event)">
-            <option *ngFor="let quantity of inventory" [value]="quantity" >{{ quantity }}</option>
+            <option *ngFor="let quantity of inventory" [value]="quantity">{{ quantity }}</option>
           </select>
         </div>
       </div>
@@ -21,5 +22,5 @@
       </button>
     </div>
   </div>
-  <br />
+  <br/>
 </div>

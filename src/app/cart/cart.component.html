@@ -111,7 +111,7 @@
       <div class="your-order-text">Your Order</div>
       <div *ngIf="cartList.length > 0">
         <div class="order-details" *ngFor="let cart of cartList">
-          <img class="order-details-thumbnail" src="{{ cart.url }}" />
+          <img class="order-details-thumbnail" src="{{ cart.url }}"/>
           <div class="order-details-overall">
             <div class="order-details-name">{{ cart.name }}</div>
             <div class="order-details-description">{{ cart.description }}</div>
@@ -120,12 +120,12 @@
             </div>
           </div>
           <div (click)="removeFromCart(cart)" class="order-details-X">
-            <img src="assets/trash-icon.png" style="width: 20px" />
+            <img src="assets/trash-icon.png" style="width: 20px"/>
           </div>
         </div>
       </div>
       <div *ngIf="cartList.length === 0" class="order-details-empty">
-        <img src="assets/empty-cart-icon.png" style="width: 60px" />
+        <img src="assets/empty-cart-icon.png" style="width: 60px"/>
         <div>The cart is empty.</div>
       </div>
       <div *ngIf="cartList.length > 0" class="order-shipping-discount">
