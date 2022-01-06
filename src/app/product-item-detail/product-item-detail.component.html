@@ -2,7 +2,7 @@
   <img src="{{ productItem.url }}" style="width: 300px" />
   <div class="product-item-detail">
     <div class="product-item-favorite">
-      <app-favorite-button [selected]="productItem.favorite" (toggleFavorite)="toggleFavorite($event)"></app-favorite-button>
+      <app-favorite-button [selected]="favorite" (toggleFavorite)="toggleFavorite(productItem.name, productItem.id, $event)"></app-favorite-button>
     </div>
     <div class="product-item-detail-name">{{ productItem.name }}</div>
     <div class="product-item-detail-description">{{ productItem.description }}</div>

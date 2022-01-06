@@ -3,6 +3,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Product } from '../models/Product';
 import { ProductService } from '../services/product.service';
 import { CartService } from '../services/cart.service';
+import { FavoriteProductService } from '../services/favorite-product.service';
 
 @Component({
   selector: 'app-product-item-detail',
@@ -22,11 +23,13 @@ export class ProductItemDetailComponent implements OnInit {
   productId: number = 0;
   quantity: number = 1;
   inventory: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  favorite: boolean = false;
 
   constructor(
     private productService: ProductService,
     private activeRouter: ActivatedRoute,
-    private cartService: CartService
+    private cartService: CartService,
+    private favoriteProductService: FavoriteProductService
   ) {
     this.activeRouter.paramMap.subscribe((params: ParamMap) => {
       this.productId = Number(params.get('productId'));
@@ -39,6 +42,9 @@ export class ProductItemDetailComponent implements OnInit {
         (product) => product.id === this.productId
       ) as unknown) as Product;
     });
+    this.favorite = this.favoriteProductService.getFavoriteStatus(
+      this.productId
+    );
   }
 
   addToCart(): void {
@@ -53,7 +59,16 @@ export class ProductItemDetailComponent implements OnInit {
     this.quantity = e.target.value;
   }
 
-  toggleFavorite(selected: boolean): void {
-    alert('favorite toggled! ' + selected);
+  toggleFavorite(
+    productName: string,
+    productId: number,
+    selected: boolean
+  ): void {
+    this.favoriteProductService.saveFavoriteProduct(productName, productId);
+    if (selected) {
+      console.log('This product has been added to favorite list!');
+    } else {
+      console.log('This product has been removed from favorite list!');
+    }
   }
 }
