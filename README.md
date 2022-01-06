@@ -17,4 +17,4 @@ Run `ng build` OR `npm run build` to build the project. The build artifacts will
 
 #### Screenshot
 ![screenshot for product cart](src/assets/homepage-screenshot.png)
-![screenshot for product list in homepage](src/assets/cart-screenshot.png)
+![screenshot for product list in homepage](src/assets/checkout-form-screenshot.png)
