@@ -17,6 +17,7 @@ export class ProductItemDetailComponent implements OnInit {
     url: '',
     description: '',
     quantity: 0,
+    favorite: false,
   };
   productId: number = 0;
   quantity: number = 1;
@@ -50,5 +51,9 @@ export class ProductItemDetailComponent implements OnInit {
 
   quantityChange(e: any) {
     this.quantity = e.target.value;
+  }
+
+  toggleFavorite(selected: boolean): void {
+    alert('favorite toggled! ' + selected);
   }
 }

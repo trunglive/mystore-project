@@ -5,7 +5,14 @@
 }
 
 .product-item-detail {
+  position: relative;
   margin-left: 40px;
+}
+
+.product-item-favorite {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .product-item-detail-name {
