@@ -15,6 +15,7 @@ import { ProductItemDetailComponent } from './product-item-detail/product-item-d
 import { FavoriteButtonComponent } from './favorite-button/favorite-button.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { MatIconModule } from '@angular/material/icon';
     ProductItemComponent,
     ProductItemDetailComponent,
     FavoriteButtonComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
